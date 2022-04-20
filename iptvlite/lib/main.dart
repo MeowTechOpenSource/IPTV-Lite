@@ -16,7 +16,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'bouncing.dart';
 import 'dbservice.dart';
 import 'iptv.dart';
-import 'package:crypto/crypto.dart';
 
 var currver = "1.0.0";
 var usingdata = false;
@@ -90,15 +89,6 @@ Future<void> _onExport(String now) async {
   //print(b);
 }
 
-Future<String> DeviceID() async {
-  DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-  AndroidDeviceInfo build = await deviceInfo.androidInfo;
-  var unique = build.model.toString() +
-      build.brand.toString() +
-      build.product.toString() +
-      build.androidId.toString();
-  return sha256.convert(utf8.encode(unique)).toString();
-}
 
 
 // ignore: prefer_typing_uninitialized_variables
